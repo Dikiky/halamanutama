@@ -474,7 +474,7 @@ am4core.ready(function() {
     var i = 0;
     
     for (i = 0; i <= 100; i++) {
-        data.push({ date: new Date().setSeconds(i - 30), value: visits });
+        data.push({ date: new Date().setSeconds(i - 90), value: visits });
         
         /*    
 const d = new Date();
@@ -551,7 +551,7 @@ document.getElementById("demo").innerHTML = day;
             chart.addData(
                 { date: new Date(lastdataItem.dateX.getTime() + 1000), value: visits },1
             );
-        }, 500);
+        },1000);
     }
     
     startInterval();
@@ -626,7 +626,7 @@ am4core.ready(function() {
     var i = 0;
     
     for (i = 0; i <= 100; i++) {
-        data.push({ date: new Date().setSeconds(i - 30), value: visits });
+        data.push({ date: new Date().setSeconds(i - 90), value: visits });
     }
     
     chart.data = data;
@@ -693,7 +693,7 @@ am4core.ready(function() {
                 { date: new Date(lastdataItem.dateX.getTime() + 1000), value: visits },
                 1
             );
-        }, 500);
+        }, 1000);
     }
     
     startInterval();
@@ -766,7 +766,7 @@ am4core.ready(function() {
     var i = 0;
     
     for (i = 0; i <= 100; i++) {
-        data.push({ date: new Date().setSeconds(i - 30), value: visits });
+        data.push({ date: new Date().setSeconds(i - 90), value: visits });
     }
     
     chart.data = data;
@@ -834,7 +834,7 @@ am4core.ready(function() {
                 { date: new Date(lastdataItem.dateX.getTime() + 1000), value: visits },
                 1
             );
-        }, 500);
+        }, 1000);
     }
     
     startInterval();

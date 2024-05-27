@@ -44,6 +44,7 @@
       <a class="navbar-brand m-0" href="#" target="_blank">
         <img src="assets/img/small-logos/uniba.png" class="navbar-brand-img h-200" alt="main_logo">
         <span class="ms-1 font-weight-bold">UNIV PGRI BANYUWANGI</span>
+        <p id="demo"></p>
        
       </a>
     </div>
@@ -70,7 +71,7 @@
               </svg>
             </div>
             <span class="nav-link-text ms-1">KAMAR 1</span>
-            <p id="demo"></p>
+           
           </a>
         </li>
             <li class="nav-item">
@@ -440,18 +441,25 @@ $(document).ready(function () {
   function update(x ,y){
    
             const d = new Date();
-            let s = d.getSeconds();
+          
             let tg = d.getUTCDate();
-            let h = d.getHours();
-            let m = d.getMinutes();
+            let jam = d.getHours();
+            let menit = d.getMinutes();
+            let detik = d.getSeconds();
+            let tanggal = d.getDate();
+            let bulan = d.getMonth()+1;
+            let hari =d.getDay();
+
             
             //const time = new Date();
-            document.getElementById("demo").innerHTML = s;
+            document.getElementById("demo").innerHTML =  bulan+":"+tanggal+":"+jam+":"+menit+":"+detik;
             //let time = x +":"+ h + ":" + m + ":" + s;
             //document.getElementById("demo").innerHTML = seconds;
-            if (s==1){ db.ref(y ).remove();}
+            if (tanggal==1  && jam==0 &&  menit==1 && detik==1){ db.ref(y).remove();} //delete tanggal satu jam 00 menit 1 detik 1
             //if (seconds==56){db.ref('Data1/'+seconds).set(visits);}
-            db.ref(y+s).set(x);
+           // if (s==59){ db.ref(y+s).set(x);}//update simpan perhari jam 23 menit 59 detik 59
+            if (jam==11 && menit ==59 && detik ==1){ db.ref(y+tanggal+":"+bulan+":"+jam+":"+menit+":"+detik).set(x);}
+            
   }
         
     
